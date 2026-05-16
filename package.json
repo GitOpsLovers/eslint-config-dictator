@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-dictator",
   "version": "1.0.0",
-  "description": "An ESLint plugin that provides opinionated preset configurations for Angular, React, Express, TypeScript and more.",
+  "description": "An ESLint plugin that provides opinionated preset configurations for multiple frameworks and libraries.",
   "keywords": [
     "eslint",
     "eslintplugin",
@@ -33,13 +33,13 @@
     "test": "jest --coverage"
   },
   "peerDependencies": {
-    "eslint": ">=8.0.0"
+    "eslint": ">=10.3.0"
   },
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "jest": "^29.7.0"
+    "eslint": "10.3.0",
+    "jest": "30.4.2"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": "24.15.0"
   }
 }
