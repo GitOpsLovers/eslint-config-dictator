@@ -3,14 +3,13 @@
 const config = require('../../lib/configs/recommended');
 
 describe('recommended config', () => {
-  test('has env with es2021 and node enabled', () => {
-    expect(config.env.es2021).toBe(true);
-    expect(config.env.node).toBe(true);
+  test('has languageOptions with ES2021 and module source type', () => {
+    expect(config.languageOptions.ecmaVersion).toBe(2021);
+    expect(config.languageOptions.sourceType).toBe('module');
   });
 
-  test('has parserOptions with ecmaVersion 2021 and sourceType module', () => {
-    expect(config.parserOptions.ecmaVersion).toBe(2021);
-    expect(config.parserOptions.sourceType).toBe('module');
+  test('exposes node globals in languageOptions', () => {
+    expect(config.languageOptions.globals.process).toBeDefined();
   });
 
   test('enforces no-var', () => {

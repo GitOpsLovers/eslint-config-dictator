@@ -4,12 +4,12 @@ const config = require('../../lib/configs/angular');
 const recommended = require('../../lib/configs/recommended');
 
 describe('angular config', () => {
-  test('enables browser env', () => {
-    expect(config.env.browser).toBe(true);
+  test('includes browser globals', () => {
+    expect(config.languageOptions.globals.window).toBeDefined();
   });
 
   test('has ecmaVersion >= 2022', () => {
-    expect(config.parserOptions.ecmaVersion).toBeGreaterThanOrEqual(2022);
+    expect(config.languageOptions.ecmaVersion).toBeGreaterThanOrEqual(2022);
   });
 
   test('limits classes to one per file', () => {

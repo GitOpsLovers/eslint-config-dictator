@@ -4,12 +4,12 @@ const config = require('../../lib/configs/express');
 const recommended = require('../../lib/configs/recommended');
 
 describe('express config', () => {
-  test('enables node env', () => {
-    expect(config.env.node).toBe(true);
+  test('includes node globals', () => {
+    expect(config.languageOptions.globals.process).toBeDefined();
   });
 
-  test('disables browser env', () => {
-    expect(config.env.browser).toBe(false);
+  test('does not include browser globals', () => {
+    expect(config.languageOptions.globals.window).toBeUndefined();
   });
 
   test('allows console (turns off no-console)', () => {

@@ -3,12 +3,12 @@
 const config = require('../../lib/configs/typescript');
 
 describe('typescript config', () => {
-  test('sets parser to @typescript-eslint/parser', () => {
-    expect(config.parser).toBe('@typescript-eslint/parser');
+  test('sets parser object in languageOptions', () => {
+    expect(config.languageOptions.parser).toBeDefined();
   });
 
-  test('includes @typescript-eslint in plugins', () => {
-    expect(config.plugins).toContain('@typescript-eslint');
+  test('includes @typescript-eslint plugin object', () => {
+    expect(config.plugins['@typescript-eslint']).toBeDefined();
   });
 
   test('disables base no-unused-vars in favour of @typescript-eslint version', () => {

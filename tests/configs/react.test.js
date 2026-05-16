@@ -4,16 +4,16 @@ const config = require('../../lib/configs/react');
 const recommended = require('../../lib/configs/recommended');
 
 describe('react config', () => {
-  test('enables browser env', () => {
-    expect(config.env.browser).toBe(true);
+  test('includes browser globals', () => {
+    expect(config.languageOptions.globals.window).toBeDefined();
   });
 
-  test('enables JSX in parserOptions', () => {
-    expect(config.parserOptions.ecmaFeatures.jsx).toBe(true);
+  test('enables JSX in languageOptions', () => {
+    expect(config.languageOptions.ecmaFeatures.jsx).toBe(true);
   });
 
   test('has ecmaVersion >= 2022', () => {
-    expect(config.parserOptions.ecmaVersion).toBeGreaterThanOrEqual(2022);
+    expect(config.languageOptions.ecmaVersion).toBeGreaterThanOrEqual(2022);
   });
 
   test('includes react version detection in settings', () => {

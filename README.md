@@ -33,46 +33,18 @@ npm install --save-dev @typescript-eslint/parser @typescript-eslint/eslint-plugi
 
 ## Usage
 
-### Legacy config (`.eslintrc.js` / `.eslintrc.json`)
-
-Add `dictator` to the `plugins` array and then extend the desired preset:
-
-```js
-// .eslintrc.js
-module.exports = {
-  plugins: ['dictator'],
-  extends: ['plugin:dictator/recommended'],
-};
-```
-
-Pick any preset name:
-
-```js
-// Angular
-extends: ['plugin:dictator/angular']
-
-// React
-extends: ['plugin:dictator/react']
-
-// Express / Node
-extends: ['plugin:dictator/express']
-
-// TypeScript
-extends: ['plugin:dictator/typescript']
-```
-
-### Flat config (`eslint.config.js` — ESLint ≥ 9)
+### Flat config (`eslint.config.js` — ESLint 10.x)
 
 ```js
 // eslint.config.js
 const dictator = require('eslint-plugin-dictator');
 
 module.exports = [
-  dictator.flatConfigs.recommended,
-  // or: dictator.flatConfigs.angular
-  // or: dictator.flatConfigs.react
-  // or: dictator.flatConfigs.express
-  // or: dictator.flatConfigs.typescript
+  dictator.configs.recommended,
+  // or: dictator.configs.angular
+  // or: dictator.configs.react
+  // or: dictator.configs.express
+  // or: dictator.configs.typescript
 ];
 ```
 
