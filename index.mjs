@@ -19,35 +19,22 @@ const plugin = {
 };
 
 plugin.configs = {
-  angular: {
-    name: 'dictator/angular',
-    plugins: {
-      dictator: plugin,
-    },
+  angular: [
+    { name: 'dictator/angular', plugins: { dictator: plugin } },
     ...angularConfig,
-  },
-  react: {
-    name: 'dictator/react',
-    plugins: {
-      dictator: plugin,
-    },
+  ],
+  react: [
+    { name: 'dictator/react', plugins: { dictator: plugin } },
     ...reactConfig,
-  },
-  express: {
-    name: 'dictator/express',
-    plugins: {
-      dictator: plugin,
-    },
+  ],
+  express: [
+    { name: 'dictator/express', plugins: { dictator: plugin } },
     ...expressConfig,
-  },
-  typescript: {
-    name: 'dictator/typescript',
+  ],
+  typescript: [
+    { name: 'dictator/typescript', plugins: { dictator: plugin } },
     ...typescriptConfig,
-    plugins: {
-      dictator: plugin,
-      ...(typescriptConfig.plugins || {}),
-    },
-  },
+  ],
 };
 
 // Backward-compatible alias.

@@ -25,29 +25,30 @@ describe('eslint-plugin-dictator', () => {
   });
 
   test.each(['angular', 'react', 'express', 'typescript'])(
-    'flat config "%s" includes dictator in plugins object',
+    'flat config "%s" is an array and includes dictator in plugins object',
     (preset) => {
-      expect(plugin.configs[preset].plugins).toBeDefined();
-      expect(plugin.configs[preset].plugins.dictator).toBe(plugin);
+      expect(Array.isArray(plugin.configs[preset])).toBe(true);
+      expect(plugin.configs[preset][0].plugins).toBeDefined();
+      expect(plugin.configs[preset][0].plugins.dictator).toBe(plugin);
     },
   );
 
   test('typescript config includes @typescript-eslint plugin object', () => {
-    expect(plugin.configs.typescript.plugins['@typescript-eslint']).toBeDefined();
+    expect(plugin.configs.typescript.at(-1).plugins['@typescript-eslint']).toBeDefined();
   });
 
   test.each(['angular', 'react', 'express', 'typescript'])(
     'config "%s" has a name field',
     (preset) => {
-      expect(plugin.configs[preset].name).toBe(`dictator/${preset}`);
+      expect(plugin.configs[preset][0].name).toBe(`dictator/${preset}`);
     },
   );
 
   test.each(['angular', 'react', 'express', 'typescript'])(
     'config "%s" has a rules object',
     (preset) => {
-      expect(plugin.configs[preset].rules).toBeDefined();
-      expect(typeof plugin.configs[preset].rules).toBe('object');
+      expect(plugin.configs[preset].at(-1).rules).toBeDefined();
+      expect(typeof plugin.configs[preset].at(-1).rules).toBe('object');
     },
   );
 });
