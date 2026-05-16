@@ -1,5 +1,3 @@
-import globals from 'globals';
-
 export default [
   {
     files: ['**/*.mjs'],
@@ -15,14 +13,6 @@ export default [
       'comma-dangle': ['error', 'always-multiline'],
       'no-trailing-spaces': 'error',
       'eol-last': ['error', 'always'],
-    },
-  },
-  {
-    files: ['tests/**/*.test.mjs'],
-    languageOptions: {
-      globals: {
-        ...globals.jest,
-      },
     },
   },
 ];
