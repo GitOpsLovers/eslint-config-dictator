@@ -1,83 +1,66 @@
 # eslint-plugin-dictator
 
-> An opinionated ESLint plugin that provides ready-to-use preset configurations for popular JavaScript frameworks and environments — just pick a preset and go.
+Opinionated ESLint flat config presets for most popular frameworks.
 
-[![npm version](https://img.shields.io/npm/v/eslint-plugin-dictator)](https://www.npmjs.com/package/eslint-plugin-dictator)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+Install one package, pick the preset that matches your stack, and get a curated set of rules covering framework best practices.
 
-## Available presets
+## Requirements
 
-| Preset | Description |
-|---|---|
-| `angular` | Rules for Angular applications |
-| `react` | Rules for React applications (JSX support included) |
-| `express` | Rules for Express / Node.js back-end projects |
-
----
+- ESLint `>= 10.3.0`
+- Node `>= 24`
 
 ## Installation
 
 ```bash
-npm install --save-dev eslint-plugin-dictator
+npm install --save-dev eslint eslint-plugin-dictator
 ```
-
----
 
 ## Usage
 
-### Flat config (`eslint.config.mjs` — ESLint 10.x)
+Create an `eslint.config.mjs` file at the root of your project and add the preset for your stack.
+
+### React
 
 ```js
-// eslint.config.mjs
 import dictator from 'eslint-plugin-dictator';
 
 export default [
-  dictator.configs.angular,
-  // or: dictator.configs.react
-  // or: dictator.configs.express
+  ...dictator.configs.react,
 ];
 ```
 
----
+### Angular
 
-## Preset details
+```js
+import dictator from 'eslint-plugin-dictator';
 
-### `angular`
+export default [
+  ...dictator.configs.angular,
+];
+```
 
-Builds on the shared base and JSDoc configs, then adds:
+### Express
 
-- Browser environment enabled
-- `max-classes-per-file: 1` (one component per file)
-- `prefer-arrow-callback` → **error**
-- `no-return-await` / `require-await` → **error**
-- `no-duplicate-imports` → **error**
+```js
+import dictator from 'eslint-plugin-dictator';
 
-### `react`
+export default [
+  ...dictator.configs.express,
+];
+```
 
-Builds on the shared base and JSDoc configs, then adds:
+## What you get out of the box
 
-- Browser environment + JSX `ecmaFeatures`
-- `react.version: 'detect'` setting
-- `prefer-arrow-callback` → **error**
-- `no-param-reassign` with common React/Express exceptions (`req`, `res`, `ctx`, …)
-- `no-return-await` / `require-await` → **error**
+Every preset includes shared rules for:
 
-### `express`
+- A solid JavaScript base
+- JSDoc
+- Arrow function preference
+- Regex optimization
+- Security (secrets and PII)
+- TypeScript, applied automatically to `*.ts`, `*.tsx`, `*.mts` and `*.cts`
 
-Builds on the shared base and JSDoc configs, then adds:
-
-- Node environment (browser disabled)
-- `no-console` turned **off** (logging is intentional on the server)
-- `no-unused-vars` ignores args named `next` or prefixed with `_`
-- `no-param-reassign` with middleware exceptions (`req`, `res`, `ctx`, …)
-- `no-promise-executor-return` / `no-async-promise-executor` → **error**
-- `no-new-func` → **error**
-
----
-
-## Contributing
-
-Pull requests are welcome. Please run `npm test` before submitting.
+On top of that, each preset adds rules specific to its framework.
 
 ## License
 

@@ -1,7 +1,11 @@
 {
   "name": "eslint-plugin-dictator",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "An ESLint plugin that provides opinionated preset configurations for multiple frameworks and libraries.",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "keywords": [
     "eslint",
     "eslintplugin",
@@ -29,7 +33,9 @@
   ],
   "scripts": {
     "lint": "eslint .",
-    "test": "vitest run --coverage"
+    "test": "vitest run --coverage",
+    "release": "semantic-release",
+    "prepare": "husky"
   },
   "dependencies": {
     "@stylistic/eslint-plugin": "5.10.0",
@@ -46,9 +52,15 @@
     "globals": ">=17.6.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "19.6.1",
+    "@commitlint/config-conventional": "19.6.0",
+    "@semantic-release/changelog": "6.0.3",
+    "@semantic-release/git": "10.0.1",
     "@vitest/coverage-v8": "4.1.6",
     "eslint": "10.3.0",
     "globals": "17.6.0",
+    "husky": "9.1.7",
+    "semantic-release": "24.2.3",
     "vitest": "4.1.6"
   },
   "engines": {
