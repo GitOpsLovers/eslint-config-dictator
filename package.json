@@ -3,8 +3,7 @@
   "version": "0.0.0-development",
   "description": "An ESLint plugin that provides opinionated preset configurations for multiple frameworks and libraries.",
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "public"
   },
   "keywords": [
     "eslint",
