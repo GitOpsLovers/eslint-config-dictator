@@ -56,4 +56,13 @@ describe('eslint-plugin-dictator', () => {
       expect(jsdocEntry.rules['jsdoc/no-types']).toBe('error');
     },
   );
+
+  test.each(['angular', 'react', 'express'])(
+    'config "%s" includes prefer-arrow plugin config',
+    (preset) => {
+      const preferArrowEntry = plugin.configs[preset].find((entry) => entry.plugins?.['prefer-arrow']);
+      expect(preferArrowEntry).toBeDefined();
+      expect(preferArrowEntry.rules['prefer-arrow/prefer-arrow-functions']).toBeDefined();
+    },
+  );
 });
