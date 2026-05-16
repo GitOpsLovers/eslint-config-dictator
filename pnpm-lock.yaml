@@ -11,8 +11,11 @@ importers:
       eslint-plugin-jsdoc:
         specifier: 62.9.0
         version: 62.9.0(eslint@10.3.0)
+      eslint-plugin-optimize-regex:
+        specifier: ^1.2.1
+        version: 1.2.1
       eslint-plugin-prefer-arrow:
-        specifier: ^1.2.3
+        specifier: 1.2.3
         version: 1.2.3(eslint@10.3.0)
     devDependencies:
       '@vitest/coverage-v8':
@@ -557,6 +560,10 @@ packages:
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
 
+  eslint-plugin-optimize-regex@1.2.1:
+    resolution: {integrity: sha512-fUaU7Tj1G/KSTDTABJw4Wp427Rl7RPl9ViYTu1Jrv36fJw4DFhd4elPdXiuYtdPsNsvzn9GcVlKEssGIVjw0UQ==}
+    engines: {node: '>=10'}
+
   eslint-plugin-prefer-arrow@1.2.3:
     resolution: {integrity: sha512-J9I5PKCOJretVuiZRGvPQxCbllxGAV/viI20JO3LYblAodofBxyMnZAJ+WGeClHgANnSJberTNoFWWjrWKBuXQ==}
     peerDependencies:
@@ -803,6 +810,10 @@ packages:
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
+
+  regexp-tree@0.1.27:
+    resolution: {integrity: sha512-iETxpjK6YoRWJG5o6hXLwvjYAoW+FEZn9os0PD/b6AP6xQwsa/Y7lCVgIixBbUPMfhu+i2LtdeAqVTgGlQarfA==}
+    hasBin: true
 
   reserved-identifiers@1.2.0:
     resolution: {integrity: sha512-yE7KUfFvaBFzGPs5H3Ops1RevfUEsDc5Iz65rOwWg4lE8HJSYtle77uul3+573457oHvBKuHYDl/xqUkKpEEdw==}
@@ -1388,6 +1399,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  eslint-plugin-optimize-regex@1.2.1:
+    dependencies:
+      regexp-tree: 0.1.27
+
   eslint-plugin-prefer-arrow@1.2.3(eslint@10.3.0):
     dependencies:
       eslint: 10.3.0
@@ -1621,6 +1636,8 @@ snapshots:
   prelude-ls@1.2.1: {}
 
   punycode@2.3.1: {}
+
+  regexp-tree@0.1.27: {}
 
   reserved-identifiers@1.2.0: {}
 

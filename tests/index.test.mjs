@@ -65,4 +65,13 @@ describe('eslint-plugin-dictator', () => {
       expect(preferArrowEntry.rules['prefer-arrow/prefer-arrow-functions']).toBeDefined();
     },
   );
+
+  test.each(['angular', 'react', 'express'])(
+    'config "%s" includes optimize-regex plugin config',
+    (preset) => {
+      const regexEntry = plugin.configs[preset].find((entry) => entry.plugins?.['optimize-regex']);
+      expect(regexEntry).toBeDefined();
+      expect(regexEntry.rules['optimize-regex/optimize-regex']).toBe('error');
+    },
+  );
 });
