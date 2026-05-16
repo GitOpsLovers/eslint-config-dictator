@@ -74,4 +74,16 @@ describe('eslint-plugin-dictator', () => {
       expect(regexEntry.rules['optimize-regex/optimize-regex']).toBe('error');
     },
   );
+
+  test.each(['angular', 'react', 'express'])(
+    'config "%s" includes security plugin config',
+    (preset) => {
+      const securityEntry = plugin.configs[preset].find(
+        (entry) => entry.plugins?.pii && entry.plugins?.['no-secrets'],
+      );
+      expect(securityEntry).toBeDefined();
+      expect(securityEntry.rules['pii/no-email']).toBe('error');
+      expect(securityEntry.rules['no-secrets/no-secrets']).toBe('error');
+    },
+  );
 });

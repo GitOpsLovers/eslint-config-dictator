@@ -11,9 +11,15 @@ importers:
       eslint-plugin-jsdoc:
         specifier: 62.9.0
         version: 62.9.0(eslint@10.3.0)
+      eslint-plugin-no-secrets:
+        specifier: ^2.3.3
+        version: 2.3.3(eslint@10.3.0)
       eslint-plugin-optimize-regex:
-        specifier: ^1.2.1
+        specifier: 1.2.1
         version: 1.2.1
+      eslint-plugin-pii:
+        specifier: ^1.0.2
+        version: 1.0.2(eslint@10.3.0)
       eslint-plugin-prefer-arrow:
         specifier: 1.2.3
         version: 1.2.3(eslint@10.3.0)
@@ -560,9 +566,21 @@ packages:
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
 
+  eslint-plugin-no-secrets@2.3.3:
+    resolution: {integrity: sha512-sroCsCscpwQxZ/O9Ml69w5qt/2nvHhXDeyUnSqSC5dMANGxt4rQgUn7xbPvDmhbMPmUCAc2Y3SRU0cXet7kNWQ==}
+    engines: {node: '>=18', npm: '>=8'}
+    peerDependencies:
+      eslint: '>=5'
+
   eslint-plugin-optimize-regex@1.2.1:
     resolution: {integrity: sha512-fUaU7Tj1G/KSTDTABJw4Wp427Rl7RPl9ViYTu1Jrv36fJw4DFhd4elPdXiuYtdPsNsvzn9GcVlKEssGIVjw0UQ==}
     engines: {node: '>=10'}
+
+  eslint-plugin-pii@1.0.2:
+    resolution: {integrity: sha512-UKOpjAxd2aGDfykeICHi6yceZOQD4KXTX25A/PLq1HCgkFRudRTvGkRzuDYZoI6oLj8TjHsEiHnDxkoapFKX4Q==}
+    engines: {node: '>=0.10.0'}
+    peerDependencies:
+      eslint: '>=4.19.1'
 
   eslint-plugin-prefer-arrow@1.2.3:
     resolution: {integrity: sha512-J9I5PKCOJretVuiZRGvPQxCbllxGAV/viI20JO3LYblAodofBxyMnZAJ+WGeClHgANnSJberTNoFWWjrWKBuXQ==}
@@ -814,6 +832,10 @@ packages:
   regexp-tree@0.1.27:
     resolution: {integrity: sha512-iETxpjK6YoRWJG5o6hXLwvjYAoW+FEZn9os0PD/b6AP6xQwsa/Y7lCVgIixBbUPMfhu+i2LtdeAqVTgGlQarfA==}
     hasBin: true
+
+  requireindex@1.1.0:
+    resolution: {integrity: sha512-LBnkqsDE7BZKvqylbmn7lTIVdpx4K/QCduRATpO5R+wtPmky/a8pN1bO2D6wXppn1497AJF9mNjqAXr6bdl9jg==}
+    engines: {node: '>=0.10.5'}
 
   reserved-identifiers@1.2.0:
     resolution: {integrity: sha512-yE7KUfFvaBFzGPs5H3Ops1RevfUEsDc5Iz65rOwWg4lE8HJSYtle77uul3+573457oHvBKuHYDl/xqUkKpEEdw==}
@@ -1399,9 +1421,20 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  eslint-plugin-no-secrets@2.3.3(eslint@10.3.0):
+    dependencies:
+      eslint: 10.3.0
+
   eslint-plugin-optimize-regex@1.2.1:
     dependencies:
       regexp-tree: 0.1.27
+
+  eslint-plugin-pii@1.0.2(eslint@10.3.0):
+    dependencies:
+      escape-string-regexp: 4.0.0
+      eslint: 10.3.0
+      ignore: 5.3.2
+      requireindex: 1.1.0
 
   eslint-plugin-prefer-arrow@1.2.3(eslint@10.3.0):
     dependencies:
@@ -1638,6 +1671,8 @@ snapshots:
   punycode@2.3.1: {}
 
   regexp-tree@0.1.27: {}
+
+  requireindex@1.1.0: {}
 
   reserved-identifiers@1.2.0: {}
 
