@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-dictator",
+  "name": "@gitopslovers/eslint-plugin-dictator",
   "version": "0.0.0-development",
   "description": "An ESLint plugin that provides opinionated preset configurations for multiple frameworks and libraries.",
   "publishConfig": {
