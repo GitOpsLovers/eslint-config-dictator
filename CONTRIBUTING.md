@@ -31,26 +31,20 @@ Sometimes you want to validate a change against a real Angular, React or Express
 
 ### 1. `pnpm link` (live link)
 
-From the plugin folder:
+From your target project, point `pnpm` at the local plugin folder:
 
 ```bash
-pnpm link --global
+pnpm link /absolute/path/to/eslint-plugin-dictator
 ```
 
-From your target project:
+Any change you save in `lib/` or `index.mjs` is picked up the next time ESLint runs in the target project. When you are done, remove the link from the target project:
 
 ```bash
-pnpm link --global eslint-plugin-dictator
+pnpm unlink eslint-plugin-dictator
+pnpm install
 ```
 
-Any change you save in `lib/` or `index.mjs` is picked up the next time ESLint runs in the target project. When you are done:
-
-```bash
-# in the target project
-pnpm unlink --global eslint-plugin-dictator
-# in the plugin folder
-pnpm unlink --global
-```
+> Tip: the old `pnpm link --global` flow was removed in pnpm 9+. Always pass the absolute path to the plugin folder.
 
 ### 2. `pnpm pack` (closest to a real install)
 

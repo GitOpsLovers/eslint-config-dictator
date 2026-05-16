@@ -18,19 +18,20 @@ describe('security config', () => {
     expect(entry.ignores).toContain('**/package*.json');
   });
 
-  test('registers pii and no-secrets plugins', () => {
+  test('registers no-secrets and security plugins', () => {
     expect(entry.plugins).toBeDefined();
-    expect(entry.plugins.pii).toBeDefined();
-    expect(typeof entry.plugins.pii).toBe('object');
     expect(entry.plugins['no-secrets']).toBeDefined();
     expect(typeof entry.plugins['no-secrets']).toBe('object');
+    expect(entry.plugins.security).toBeDefined();
+    expect(typeof entry.plugins.security).toBe('object');
   });
 
   test('enforces security-sensitive rules', () => {
     expect(entry.rules).toBeDefined();
-    expect(entry.rules['pii/no-email']).toBe('error');
-    expect(entry.rules['pii/no-ip']).toBe('error');
-    expect(entry.rules['pii/no-phone-number']).toBe('error');
     expect(entry.rules['no-secrets/no-secrets']).toBe('error');
+    expect(entry.rules['security/detect-eval-with-expression']).toBe('error');
+    expect(entry.rules['security/detect-child-process']).toBe('error');
+    expect(entry.rules['security/detect-unsafe-regex']).toBe('error');
+    expect(entry.rules['security/detect-object-injection']).toBe('warn');
   });
 });

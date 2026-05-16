@@ -79,11 +79,11 @@ describe('eslint-plugin-dictator', () => {
     'config "%s" includes security plugin config',
     (preset) => {
       const securityEntry = plugin.configs[preset].find(
-        (entry) => entry.plugins?.pii && entry.plugins?.['no-secrets'],
+        (entry) => entry.plugins?.['no-secrets'] && entry.plugins?.security,
       );
       expect(securityEntry).toBeDefined();
-      expect(securityEntry.rules['pii/no-email']).toBe('error');
       expect(securityEntry.rules['no-secrets/no-secrets']).toBe('error');
+      expect(securityEntry.rules['security/detect-eval-with-expression']).toBe('error');
     },
   );
 
@@ -96,6 +96,38 @@ describe('eslint-plugin-dictator', () => {
       expect(typescriptEntry).toBeDefined();
       expect(typescriptEntry.files).toEqual(['**/*.{ts,tsx,mts,cts}']);
       expect(typescriptEntry.rules['@typescript-eslint/no-unused-vars']).toBeDefined();
+    },
+  );
+
+  test.each(['angular', 'react', 'express'])(
+    'config "%s" includes vitest test config scoped to test files',
+    (preset) => {
+      const vitestEntry = plugin.configs[preset].find(
+        (entry) => entry.plugins?.vitest,
+      );
+      expect(vitestEntry).toBeDefined();
+      expect(vitestEntry.files.some((glob) => glob.includes('test'))).toBe(true);
+      expect(vitestEntry.rules['vitest/no-focused-tests']).toBe('error');
+    },
+  );
+
+  test('config "react" includes testing-library and jest-dom for test files', () => {
+    const rtlEntry = plugin.configs.react.find(
+      (entry) => entry.plugins?.['testing-library'] && entry.plugins?.['jest-dom'],
+    );
+    expect(rtlEntry).toBeDefined();
+    const ruleKeys = Object.keys(rtlEntry.rules);
+    expect(ruleKeys.some((key) => key.startsWith('testing-library/'))).toBe(true);
+    expect(ruleKeys.some((key) => key.startsWith('jest-dom/'))).toBe(true);
+  });
+
+  test.each(['angular', 'express'])(
+    'config "%s" does not include the react-tests plugin config',
+    (preset) => {
+      const rtlEntry = plugin.configs[preset].find(
+        (entry) => entry.plugins?.['testing-library'],
+      );
+      expect(rtlEntry).toBeUndefined();
     },
   );
 });

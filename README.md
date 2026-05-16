@@ -57,10 +57,11 @@ Every preset includes shared rules for:
 - JSDoc
 - Arrow function preference
 - Regex optimization
-- Security (secrets and PII)
+- Security (secrets)
+- Vitest rules for test files (`*.test.*`, `*.spec.*`, `tests/**`, `__tests__/**`)
 - TypeScript, applied automatically to `*.ts`, `*.tsx`, `*.mts` and `*.cts`
 
-On top of that, each preset adds rules specific to its framework.
+On top of that, each preset adds rules specific to its framework. The React preset additionally enables `eslint-plugin-testing-library` and `eslint-plugin-jest-dom` on test files.
 
 ## License
 
