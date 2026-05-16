@@ -86,4 +86,16 @@ describe('eslint-plugin-dictator', () => {
       expect(securityEntry.rules['no-secrets/no-secrets']).toBe('error');
     },
   );
+
+  test.each(['angular', 'react', 'express'])(
+    'config "%s" includes typescript plugin config scoped to TS files',
+    (preset) => {
+      const typescriptEntry = plugin.configs[preset].find(
+        (entry) => entry.plugins?.['@typescript-eslint'],
+      );
+      expect(typescriptEntry).toBeDefined();
+      expect(typescriptEntry.files).toEqual(['**/*.{ts,tsx,mts,cts}']);
+      expect(typescriptEntry.rules['@typescript-eslint/no-unused-vars']).toBeDefined();
+    },
+  );
 });
