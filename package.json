@@ -1,0 +1,45 @@
+{
+  "name": "eslint-plugin-dictator",
+  "version": "1.0.0",
+  "description": "An ESLint plugin that provides opinionated preset configurations for Angular, React, Express, TypeScript and more.",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "preset",
+    "angular",
+    "react",
+    "express",
+    "typescript",
+    "dictator"
+  ],
+  "homepage": "https://github.com/GitOpsLovers/eslint-plugin-dictator#readme",
+  "bugs": {
+    "url": "https://github.com/GitOpsLovers/eslint-plugin-dictator/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GitOpsLovers/eslint-plugin-dictator.git"
+  },
+  "license": "MIT",
+  "author": "GitOps Lovers",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "lib/**/*.js"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest --coverage"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
