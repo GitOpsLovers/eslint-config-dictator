@@ -9,11 +9,9 @@
 
 | Preset | Description |
 |---|---|
-| `recommended` | Base rules suitable for every JavaScript project |
 | `angular` | Rules for Angular applications |
 | `react` | Rules for React applications (JSX support included) |
 | `express` | Rules for Express / Node.js back-end projects |
-| `typescript` | Rules for TypeScript projects (requires `@typescript-eslint`) |
 
 ---
 
@@ -21,12 +19,6 @@
 
 ```bash
 npm install --save-dev eslint-plugin-dictator
-```
-
-For the **TypeScript** preset you also need:
-
-```bash
-npm install --save-dev @typescript-eslint/parser @typescript-eslint/eslint-plugin
 ```
 
 ---
@@ -40,11 +32,9 @@ npm install --save-dev @typescript-eslint/parser @typescript-eslint/eslint-plugi
 import dictator from 'eslint-plugin-dictator';
 
 export default [
-  dictator.configs.recommended,
-  // or: dictator.configs.angular
+  dictator.configs.angular,
   // or: dictator.configs.react
   // or: dictator.configs.express
-  // or: dictator.configs.typescript
 ];
 ```
 
@@ -52,21 +42,9 @@ export default [
 
 ## Preset details
 
-### `recommended` (base)
-
-Applicable to every JavaScript project. Enables ES2021 globals, module source type and a curated set of rules:
-
-- `no-var` → **error** (use `const`/`let`)
-- `prefer-const` → **error**
-- `eqeqeq` → **error** (strict equality)
-- `no-eval` / `no-implied-eval` → **error**
-- `no-unused-vars` → **error**
-- `semi`, `quotes` (single), `comma-dangle` → enforced style
-- `no-console` → **warn**
-
 ### `angular`
 
-Extends `recommended` and adds:
+Builds on the shared base and JSDoc configs, then adds:
 
 - Browser environment enabled
 - `max-classes-per-file: 1` (one component per file)
@@ -76,7 +54,7 @@ Extends `recommended` and adds:
 
 ### `react`
 
-Extends `recommended` and adds:
+Builds on the shared base and JSDoc configs, then adds:
 
 - Browser environment + JSX `ecmaFeatures`
 - `react.version: 'detect'` setting
@@ -86,7 +64,7 @@ Extends `recommended` and adds:
 
 ### `express`
 
-Extends `recommended` and adds:
+Builds on the shared base and JSDoc configs, then adds:
 
 - Node environment (browser disabled)
 - `no-console` turned **off** (logging is intentional on the server)
@@ -94,17 +72,6 @@ Extends `recommended` and adds:
 - `no-param-reassign` with middleware exceptions (`req`, `res`, `ctx`, …)
 - `no-promise-executor-return` / `no-async-promise-executor` → **error**
 - `no-new-func` → **error**
-
-### `typescript`
-
-Extends `recommended` and adds:
-
-- Uses `@typescript-eslint/parser`
-- Replaces `no-unused-vars` / `no-shadow` with TypeScript-aware equivalents
-- Disables `no-undef` (TypeScript handles it)
-- `@typescript-eslint/no-explicit-any` → **warn**
-- `@typescript-eslint/explicit-module-boundary-types` → **warn**
-- `@typescript-eslint/no-non-null-assertion` → **warn**
 
 ---
 

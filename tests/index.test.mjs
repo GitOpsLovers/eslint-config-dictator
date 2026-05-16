@@ -15,16 +15,16 @@ describe('eslint-plugin-dictator', () => {
   });
 
   test('exports flat configs for all presets', () => {
-    const expected = ['angular', 'react', 'express', 'typescript'];
+    const expected = ['angular', 'react', 'express'];
     expect(Object.keys(plugin.configs)).toEqual(expect.arrayContaining(expected));
   });
 
   test('keeps flatConfigs alias for backwards compatibility', () => {
-    const expected = ['angular', 'react', 'express', 'typescript'];
+    const expected = ['angular', 'react', 'express'];
     expect(Object.keys(plugin.flatConfigs)).toEqual(expect.arrayContaining(expected));
   });
 
-  test.each(['angular', 'react', 'express', 'typescript'])(
+  test.each(['angular', 'react', 'express'])(
     'flat config "%s" is an array and includes dictator in plugins object',
     (preset) => {
       expect(Array.isArray(plugin.configs[preset])).toBe(true);
@@ -33,22 +33,27 @@ describe('eslint-plugin-dictator', () => {
     },
   );
 
-  test('typescript config includes @typescript-eslint plugin object', () => {
-    expect(plugin.configs.typescript.at(-1).plugins['@typescript-eslint']).toBeDefined();
-  });
-
-  test.each(['angular', 'react', 'express', 'typescript'])(
+  test.each(['angular', 'react', 'express'])(
     'config "%s" has a name field',
     (preset) => {
       expect(plugin.configs[preset][0].name).toBe(`dictator/${preset}`);
     },
   );
 
-  test.each(['angular', 'react', 'express', 'typescript'])(
+  test.each(['angular', 'react', 'express'])(
     'config "%s" has a rules object',
     (preset) => {
       expect(plugin.configs[preset].at(-1).rules).toBeDefined();
       expect(typeof plugin.configs[preset].at(-1).rules).toBe('object');
+    },
+  );
+
+  test.each(['angular', 'react', 'express'])(
+    'config "%s" includes jsdoc plugin config',
+    (preset) => {
+      const jsdocEntry = plugin.configs[preset].find((entry) => entry.plugins?.jsdoc);
+      expect(jsdocEntry).toBeDefined();
+      expect(jsdocEntry.rules['jsdoc/no-types']).toBe('error');
     },
   );
 });
