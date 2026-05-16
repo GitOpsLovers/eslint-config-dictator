@@ -1,6 +1,6 @@
-'use strict';
+import { describe, expect, test } from '@jest/globals';
 
-const config = require('../../lib/configs/recommended');
+import config from '../../lib/configs/recommended.mjs';
 
 describe('recommended config', () => {
   test('has languageOptions with ES2021 and module source type', () => {

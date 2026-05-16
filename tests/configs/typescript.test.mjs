@@ -1,6 +1,6 @@
-'use strict';
+import { describe, expect, test } from '@jest/globals';
 
-const config = require('../../lib/configs/typescript');
+import config from '../../lib/configs/typescript.mjs';
 
 describe('typescript config', () => {
   test('sets parser object in languageOptions', () => {

@@ -33,13 +33,13 @@ npm install --save-dev @typescript-eslint/parser @typescript-eslint/eslint-plugi
 
 ## Usage
 
-### Flat config (`eslint.config.js` — ESLint 10.x)
+### Flat config (`eslint.config.mjs` — ESLint 10.x)
 
 ```js
-// eslint.config.js
-const dictator = require('eslint-plugin-dictator');
+// eslint.config.mjs
+import dictator from 'eslint-plugin-dictator';
 
-module.exports = [
+export default [
   dictator.configs.recommended,
   // or: dictator.configs.angular
   // or: dictator.configs.react

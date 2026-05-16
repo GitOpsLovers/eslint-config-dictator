@@ -1,6 +1,6 @@
-'use strict';
+import { describe, expect, test } from '@jest/globals';
 
-const plugin = require('../index');
+import plugin from '../index.mjs';
 
 describe('eslint-plugin-dictator', () => {
   test('exports a meta object with name and version', () => {

@@ -1,7 +1,7 @@
-'use strict';
+import { describe, expect, test } from '@jest/globals';
 
-const config = require('../../lib/configs/react');
-const recommended = require('../../lib/configs/recommended');
+import config from '../../lib/configs/react.mjs';
+import recommended from '../../lib/configs/recommended.mjs';
 
 describe('react config', () => {
   test('includes browser globals', () => {

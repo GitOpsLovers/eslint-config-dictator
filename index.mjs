@@ -1,15 +1,19 @@
-'use strict';
+import { readFileSync } from 'node:fs';
 
-const recommendedConfig = require('./lib/configs/recommended');
-const angularConfig = require('./lib/configs/angular');
-const reactConfig = require('./lib/configs/react');
-const expressConfig = require('./lib/configs/express');
-const typescriptConfig = require('./lib/configs/typescript');
+import angularConfig from './lib/configs/angular.mjs';
+import expressConfig from './lib/configs/express.mjs';
+import reactConfig from './lib/configs/react.mjs';
+import recommendedConfig from './lib/configs/recommended.mjs';
+import typescriptConfig from './lib/configs/typescript.mjs';
+
+const packageVersion = JSON.parse(
+  readFileSync(new URL('./package.json', import.meta.url), 'utf8'),
+).version;
 
 const plugin = {
   meta: {
     name: 'eslint-plugin-dictator',
-    version: require('./package.json').version,
+    version: packageVersion,
   },
   rules: {},
   configs: {},
@@ -57,4 +61,4 @@ plugin.configs = {
 // Backward-compatible alias.
 plugin.flatConfigs = plugin.configs;
 
-module.exports = plugin;
+export default plugin;
