@@ -15,16 +15,16 @@ describe('eslint-plugin-dictator', () => {
   });
 
   test('exports flat configs for all presets', () => {
-    const expected = ['recommended', 'angular', 'react', 'express', 'typescript'];
+    const expected = ['angular', 'react', 'express', 'typescript'];
     expect(Object.keys(plugin.configs)).toEqual(expect.arrayContaining(expected));
   });
 
   test('keeps flatConfigs alias for backwards compatibility', () => {
-    const expected = ['recommended', 'angular', 'react', 'express', 'typescript'];
+    const expected = ['angular', 'react', 'express', 'typescript'];
     expect(Object.keys(plugin.flatConfigs)).toEqual(expect.arrayContaining(expected));
   });
 
-  test.each(['recommended', 'angular', 'react', 'express', 'typescript'])(
+  test.each(['angular', 'react', 'express', 'typescript'])(
     'flat config "%s" includes dictator in plugins object',
     (preset) => {
       expect(plugin.configs[preset].plugins).toBeDefined();
@@ -36,14 +36,14 @@ describe('eslint-plugin-dictator', () => {
     expect(plugin.configs.typescript.plugins['@typescript-eslint']).toBeDefined();
   });
 
-  test.each(['recommended', 'angular', 'react', 'express', 'typescript'])(
+  test.each(['angular', 'react', 'express', 'typescript'])(
     'config "%s" has a name field',
     (preset) => {
       expect(plugin.configs[preset].name).toBe(`dictator/${preset}`);
     },
   );
 
-  test.each(['recommended', 'angular', 'react', 'express', 'typescript'])(
+  test.each(['angular', 'react', 'express', 'typescript'])(
     'config "%s" has a rules object',
     (preset) => {
       expect(plugin.configs[preset].rules).toBeDefined();

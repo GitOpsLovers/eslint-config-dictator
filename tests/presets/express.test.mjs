@@ -1,7 +1,6 @@
 import { describe, expect, test } from 'vitest';
 
-import config from '../../lib/configs/express.mjs';
-import recommended from '../../lib/configs/recommended.mjs';
+import config from '../../lib/presets/express.mjs';
 
 describe('express config', () => {
   test('includes node globals', () => {
@@ -48,7 +47,7 @@ describe('express config', () => {
     expect(rule[1].ignorePropertyModificationsFor).toContain('res');
   });
 
-  test('inherits no-var from recommended', () => {
-    expect(config.rules['no-var']).toBe(recommended.rules['no-var']);
+  test('enforces no-var', () => {
+    expect(config.rules['no-var']).toBe('error');
   });
 });

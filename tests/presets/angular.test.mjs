@@ -1,7 +1,6 @@
 import { describe, expect, test } from 'vitest';
 
-import config from '../../lib/configs/angular.mjs';
-import recommended from '../../lib/configs/recommended.mjs';
+import config from '../../lib/presets/angular.mjs';
 
 describe('angular config', () => {
   test('includes browser globals', () => {
@@ -24,11 +23,11 @@ describe('angular config', () => {
     expect(config.rules['no-duplicate-imports']).toBe('error');
   });
 
-  test('inherits no-var from recommended', () => {
-    expect(config.rules['no-var']).toBe(recommended.rules['no-var']);
+  test('enforces no-var', () => {
+    expect(config.rules['no-var']).toBe('error');
   });
 
-  test('inherits prefer-const from recommended', () => {
-    expect(config.rules['prefer-const']).toBe(recommended.rules['prefer-const']);
+  test('enforces prefer-const', () => {
+    expect(config.rules['prefer-const']).toBe('error');
   });
 });

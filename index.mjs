@@ -1,10 +1,9 @@
 import { readFileSync } from 'node:fs';
 
-import angularConfig from './lib/configs/angular.mjs';
-import expressConfig from './lib/configs/express.mjs';
-import reactConfig from './lib/configs/react.mjs';
-import recommendedConfig from './lib/configs/recommended.mjs';
-import typescriptConfig from './lib/configs/typescript.mjs';
+import angularConfig from './lib/presets/angular.mjs';
+import expressConfig from './lib/presets/express.mjs';
+import reactConfig from './lib/presets/react.mjs';
+import typescriptConfig from './lib/presets/typescript.mjs';
 
 const packageVersion = JSON.parse(
   readFileSync(new URL('./package.json', import.meta.url), 'utf8'),
@@ -20,13 +19,6 @@ const plugin = {
 };
 
 plugin.configs = {
-  recommended: {
-    name: 'dictator/recommended',
-    plugins: {
-      dictator: plugin,
-    },
-    ...recommendedConfig,
-  },
   angular: {
     name: 'dictator/angular',
     plugins: {

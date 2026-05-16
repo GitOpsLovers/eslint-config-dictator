@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 
-import config from '../../lib/configs/typescript.mjs';
+import config from '../../lib/presets/typescript.mjs';
 
 describe('typescript config', () => {
   test('sets parser object in languageOptions', () => {
