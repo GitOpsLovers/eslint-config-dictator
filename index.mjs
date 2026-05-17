@@ -10,7 +10,7 @@ const packageVersion = JSON.parse(
 
 const plugin = {
   meta: {
-    name: 'eslint-plugin-dictator',
+    name: 'eslint-config-dictator',
     version: packageVersion,
   },
   rules: {},

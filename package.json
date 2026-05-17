@@ -1,5 +1,5 @@
 {
-  "name": "@gitopslovers/eslint-plugin-dictator",
+  "name": "@gitopslovers/eslint-config-multistack",
   "version": "0.0.0-development",
   "description": "An ESLint plugin that provides opinionated preset configurations for multiple frameworks and libraries.",
   "publishConfig": {
@@ -15,13 +15,13 @@
     "express",
     "dictator"
   ],
-  "homepage": "https://github.com/GitOpsLovers/eslint-plugin-dictator#readme",
+  "homepage": "https://github.com/GitOpsLovers/eslint-config-dictator#readme",
   "bugs": {
-    "url": "https://github.com/GitOpsLovers/eslint-plugin-dictator/issues"
+    "url": "https://github.com/GitOpsLovers/eslint-config-dictator/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GitOpsLovers/eslint-plugin-dictator.git"
+    "url": "git+https://github.com/GitOpsLovers/eslint-config-dictator.git"
   },
   "license": "MIT",
   "author": "GitOps Lovers",
