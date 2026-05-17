@@ -30,10 +30,6 @@ describe('react config', () => {
     expect(preset.rules['no-duplicate-imports']).toBe('error');
   });
 
-  test('enforces no-var', () => {
-    expect(preset.rules['no-var']).toBe('error');
-  });
-
   test('includes imports config with import and unused-imports plugins', () => {
     expect(importsEntry).toBeDefined();
     expect(importsEntry.rules['unused-imports/no-unused-imports']).toBe('error');

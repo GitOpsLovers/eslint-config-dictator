@@ -124,6 +124,10 @@ describe('base config', () => {
     expect(rules['no-useless-return']).toBe('error');
   });
 
+  test('forbids var declarations', () => {
+    expect(rules['no-var']).toBe('error');
+  });
+
   test('enforces one variable declaration per line', () => {
     expect(rules['one-var']).toEqual(['error', 'never']);
   });

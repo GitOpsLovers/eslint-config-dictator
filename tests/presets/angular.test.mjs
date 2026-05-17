@@ -26,10 +26,6 @@ describe('angular config', () => {
     expect(preset.rules['no-duplicate-imports']).toBe('error');
   });
 
-  test('enforces no-var', () => {
-    expect(preset.rules['no-var']).toBe('error');
-  });
-
   test('enforces prefer-const', () => {
     expect(preset.rules['prefer-const']).toBe('error');
   });

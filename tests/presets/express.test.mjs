@@ -38,10 +38,6 @@ describe('express config', () => {
     expect(rule[1].argsIgnorePattern).toMatch(/next/);
   });
 
-  test('enforces no-var', () => {
-    expect(preset.rules['no-var']).toBe('error');
-  });
-
   test('includes imports config with import and unused-imports plugins', () => {
     expect(importsEntry).toBeDefined();
     expect(importsEntry.rules['unused-imports/no-unused-imports']).toBe('error');
