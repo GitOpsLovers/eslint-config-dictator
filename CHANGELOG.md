@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/GitOpsLovers/eslint-config-multistack/compare/v1.0.0...v1.1.0) (2026-05-17)
+
+
+### Features
+
+* upgrade ESLint ([c828763](https://github.com/GitOpsLovers/eslint-config-multistack/commit/c828763fa36b57b49acf4f0d357591efb5324237))
+
 # 1.0.0 (2026-05-17)
 
 
