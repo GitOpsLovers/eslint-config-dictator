@@ -41,13 +41,15 @@
     "@typescript-eslint/eslint-plugin": "8.59.3",
     "@typescript-eslint/parser": "8.59.3",
     "@vitest/eslint-plugin": "1.6.17",
+    "eslint-plugin-import-x": "4.16.2",
     "eslint-plugin-jest-dom": "5.5.0",
     "eslint-plugin-jsdoc": "62.9.0",
     "eslint-plugin-no-secrets": "2.3.3",
     "eslint-plugin-optimize-regex": "1.2.1",
     "eslint-plugin-prefer-arrow": "1.2.3",
     "eslint-plugin-security": "4.0.0",
-    "eslint-plugin-testing-library": "7.16.2"
+    "eslint-plugin-testing-library": "7.16.2",
+    "eslint-plugin-unused-imports": "4.4.1"
   },
   "peerDependencies": {
     "eslint": ">=10.3.0",
