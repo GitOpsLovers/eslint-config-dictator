@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/GitOpsLovers/eslint-config-multistack/compare/v1.2.0...v1.2.1) (2026-05-17)
+
+
+### Bug Fixes
+
+* rename import configuration alias to append -x ([3826317](https://github.com/GitOpsLovers/eslint-config-multistack/commit/3826317c33f85211d46024b0df33518098b2e0f3))
+
 # [1.2.0](https://github.com/GitOpsLovers/eslint-config-multistack/compare/v1.1.0...v1.2.0) (2026-05-17)
 
 
