@@ -40,6 +40,14 @@ describe('imports config', () => {
   test('enforces unused import removal and import ordering', () => {
     expect(entry.rules['unused-imports/no-unused-imports']).toBe('error');
     expect(entry.rules['import/no-unresolved']).toBe('error');
+    expect(entry.rules['import/no-unused-modules']).toEqual([
+      'error',
+      {
+        missingExports: true,
+        unusedExports: true,
+        suppressMissingFileEnumeratorAPIWarning: true,
+      },
+    ]);
     expect(entry.rules['import/order'][0]).toBe('error');
     expect(entry.rules['import/order'][1]['newlines-between']).toBe('always');
   });

@@ -5,7 +5,7 @@ import config from '../../lib/presets/react.mjs';
 const preset = config.at(-1);
 const importsEntry = config.find((entry) => entry.plugins?.import && entry.plugins?.['unused-imports']);
 const reactEntry = config.find(
-  (entry) => entry.plugins?.react && entry.plugins?.['react-hooks'] && entry.plugins?.['jsx-a11y'],
+  (entry) => entry.plugins?.['@eslint-react'],
 );
 
 describe('react config', () => {
@@ -14,7 +14,7 @@ describe('react config', () => {
   });
 
   test('enables JSX in languageOptions', () => {
-    expect(preset.languageOptions.ecmaFeatures.jsx).toBe(true);
+    expect(preset.languageOptions.parserOptions.ecmaFeatures.jsx).toBe(true);
   });
 
   test('has ecmaVersion >= 2022', () => {
@@ -28,9 +28,10 @@ describe('react config', () => {
   test('includes react plugin config layer', () => {
     expect(reactEntry).toBeDefined();
     expect(reactEntry.files).toEqual(['**/*.jsx', '**/*.tsx']);
-    expect(reactEntry.rules['react/jsx-key']).toBe('error');
-    expect(reactEntry.rules['react-hooks/rules-of-hooks']).toBe('error');
-    expect(reactEntry.rules['jsx-a11y/alt-text']).toBe('error');
+    expect(reactEntry.rules['@eslint-react/no-missing-key']).toBe('warn');
+    expect(
+      Object.keys(reactEntry.rules).some((ruleName) => ruleName.startsWith('@eslint-react/')),
+    ).toBe(true);
   });
 
   test('enforces prefer-arrow-callback', () => {
