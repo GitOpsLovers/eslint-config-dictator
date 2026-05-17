@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/GitOpsLovers/eslint-config-multistack/compare/v1.2.1...v1.3.0) (2026-05-17)
+
+
+### Features
+
+* add React rules ([9b2c41d](https://github.com/GitOpsLovers/eslint-config-multistack/commit/9b2c41d9c85edd587b6fa525378fbf0f039d8358))
+* use ESLint React plugin as unified React config ([a2d1624](https://github.com/GitOpsLovers/eslint-config-multistack/commit/a2d16243d4508df11d4a1a81f42088d6d9ad9c83))
+
 ## [1.2.1](https://github.com/GitOpsLovers/eslint-config-multistack/compare/v1.2.0...v1.2.1) (2026-05-17)
 
 
