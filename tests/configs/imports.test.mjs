@@ -18,14 +18,14 @@ describe('imports config', () => {
   });
 
   test('sets import resolver for typescript and node', () => {
-    expect(entry.settings['import/resolver']).toBeDefined();
-    expect(entry.settings['import/resolver'].typescript.project).toContain('tsconfig.json');
-    expect(entry.settings['import/resolver'].node.project).toContain('tsconfig.json');
+    expect(entry.settings['import-x/resolver']).toBeDefined();
+    expect(entry.settings['import-x/resolver'].typescript.project).toContain('tsconfig.json');
+    expect(entry.settings['import-x/resolver'].node.project).toContain('tsconfig.json');
   });
 
   test('registers TypeScript parser for supported TS extensions', () => {
-    expect(entry.settings['import/parsers']).toBeDefined();
-    expect(entry.settings['import/parsers']['@typescript-eslint/parser']).toEqual([
+    expect(entry.settings['import-x/parsers']).toBeDefined();
+    expect(entry.settings['import-x/parsers']['@typescript-eslint/parser']).toEqual([
       '.ts',
       '.tsx',
       '.mts',
@@ -34,7 +34,7 @@ describe('imports config', () => {
   });
 
   test('enables TypeScript resolver type lookup', () => {
-    expect(entry.settings['import/resolver'].typescript.alwaysTryTypes).toBe(true);
+    expect(entry.settings['import-x/resolver'].typescript.alwaysTryTypes).toBe(true);
   });
 
   test('enforces unused import removal and import ordering', () => {
