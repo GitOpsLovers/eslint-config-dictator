@@ -40,10 +40,10 @@ pnpm add -D eslint @gitopslovers/eslint-config-multistack
 Create an `eslint.config.mjs` file and spread the preset you want to use.
 
 ```js
-import dictator from '@gitopslovers/eslint-config-multistack';
+import multistack from '@gitopslovers/eslint-config-multistack';
 
 export default [
-  ...dictator.configs.presetName,
+  ...multistack.configs.presetName,
 ];
 ```
 
@@ -51,17 +51,17 @@ export default [
 
 These are the presets currently available on the package:
 
-- `dictator.configs.react` for React projects
-- `dictator.configs.angular` for Angular projects
-- `dictator.configs.express` for Express and Node backends
+- `multistack.configs.react` for React projects
+- `multistack.configs.angular` for Angular projects
+- `multistack.configs.express` for Express and Node backends
 
 Example:
 
 ```js
-import dictator from '@gitopslovers/eslint-config-multistack';
+import multistack from '@gitopslovers/eslint-config-multistack';
 
 export default [
-  ...dictator.configs.react,
+  ...multistack.configs.react,
 ];
 ```
 
@@ -82,10 +82,10 @@ Every preset already bundles rules for:
 You can append your own config after the preset to override any rule.
 
 ```js
-import dictator from '@gitopslovers/eslint-config-multistack';
+import multistack from '@gitopslovers/eslint-config-multistack';
 
 export default [
-  ...dictator.configs.yourPreset,
+  ...multistack.configs.yourPreset,
   {
     rules: {
       'no-console': 'off',
