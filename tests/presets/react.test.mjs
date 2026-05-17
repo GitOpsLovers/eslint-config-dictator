@@ -4,6 +4,9 @@ import config from '../../lib/presets/react.mjs';
 
 const preset = config.at(-1);
 const importsEntry = config.find((entry) => entry.plugins?.import && entry.plugins?.['unused-imports']);
+const reactEntry = config.find(
+  (entry) => entry.plugins?.react && entry.plugins?.['react-hooks'] && entry.plugins?.['jsx-a11y'],
+);
 
 describe('react config', () => {
   test('includes browser globals', () => {
@@ -20,6 +23,14 @@ describe('react config', () => {
 
   test('includes react version detection in settings', () => {
     expect(preset.settings.react.version).toBe('detect');
+  });
+
+  test('includes react plugin config layer', () => {
+    expect(reactEntry).toBeDefined();
+    expect(reactEntry.files).toEqual(['**/*.jsx', '**/*.tsx']);
+    expect(reactEntry.rules['react/jsx-key']).toBe('error');
+    expect(reactEntry.rules['react-hooks/rules-of-hooks']).toBe('error');
+    expect(reactEntry.rules['jsx-a11y/alt-text']).toBe('error');
   });
 
   test('enforces prefer-arrow-callback', () => {

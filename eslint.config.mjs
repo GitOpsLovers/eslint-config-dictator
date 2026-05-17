@@ -1,5 +1,8 @@
 export default [
   {
+    ignores: ['coverage'],
+  },
+  {
     files: ['**/*.mjs'],
     languageOptions: {
       ecmaVersion: 2022,
