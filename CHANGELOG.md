@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/GitOpsLovers/eslint-config-multistack/compare/v1.1.0...v1.2.0) (2026-05-17)
+
+
+### Features
+
+* move no-var rule to base configuration ([3750617](https://github.com/GitOpsLovers/eslint-config-multistack/commit/3750617f8a47c73e1979e340edf8477e68020e3a))
+
 # [1.1.0](https://github.com/GitOpsLovers/eslint-config-multistack/compare/v1.0.0...v1.1.0) (2026-05-17)
 
 
