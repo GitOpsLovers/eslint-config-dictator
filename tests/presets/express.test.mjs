@@ -3,6 +3,7 @@ import { describe, expect, test } from 'vitest';
 import config from '../../lib/presets/express.mjs';
 
 const preset = config.at(-1);
+const importsEntry = config.find((entry) => entry.plugins?.import && entry.plugins?.['unused-imports']);
 
 describe('express config', () => {
   test('includes node globals', () => {
@@ -36,5 +37,11 @@ describe('express config', () => {
 
   test('enforces no-var', () => {
     expect(preset.rules['no-var']).toBe('error');
+  });
+
+  test('includes imports config with import and unused-imports plugins', () => {
+    expect(importsEntry).toBeDefined();
+    expect(importsEntry.rules['unused-imports/no-unused-imports']).toBe('error');
+    expect(importsEntry.rules['import/order'][0]).toBe('error');
   });
 });
