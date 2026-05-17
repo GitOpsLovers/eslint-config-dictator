@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for your interest in improving `eslint-config-dictator`. This document explains how to set up the project locally, the conventions we follow, and how a change reaches a published release.
+Thanks for your interest in improving `eslint-config-multistack`. This document explains how to set up the project locally, the conventions we follow, and how a change reaches a published release.
 
 ## Requirements
 
@@ -11,8 +11,8 @@ Thanks for your interest in improving `eslint-config-dictator`. This document ex
 ## Getting started
 
 ```bash
-git clone https://github.com/GitOpsLovers/eslint-config-dictator.git
-cd eslint-config-dictator
+git clone https://github.com/GitOpsLovers/eslint-config-multistack.git
+cd eslint-config-multistack
 pnpm install
 ```
 
@@ -34,13 +34,13 @@ Sometimes you want to validate a change against a real Angular, React or Express
 From your target project, point `pnpm` at the local plugin folder:
 
 ```bash
-pnpm link /absolute/path/to/eslint-config-dictator
+pnpm link /absolute/path/to/eslint-config-multistack
 ```
 
 Any change you save in `lib/` or `index.mjs` is picked up the next time ESLint runs in the target project. When you are done, remove the link from the target project:
 
 ```bash
-pnpm unlink eslint-config-dictator
+pnpm unlink eslint-config-multistack
 pnpm install
 ```
 
@@ -53,10 +53,10 @@ Builds the same tarball that would be published to npm. Best to catch packaging 
 ```bash
 # in the plugin folder
 pnpm pack
-# produces eslint-config-dictator-<version>.tgz
+# produces eslint-config-multistack-<version>.tgz
 
 # in the target project
-pnpm add -D /absolute/path/to/eslint-config-dictator-<version>.tgz
+pnpm add -D /absolute/path/to/eslint-config-multistack-<version>.tgz
 ```
 
 Reinstall the tarball every time you want to test a new change.
@@ -67,13 +67,13 @@ Quick alternative without packing:
 
 ```bash
 # in the target project
-pnpm add -D file:/absolute/path/to/eslint-config-dictator
+pnpm add -D file:/absolute/path/to/eslint-config-multistack
 ```
 
 Then add the preset to your `eslint.config.mjs`:
 
 ```js
-import dictator from 'eslint-config-dictator';
+import dictator from 'eslint-config-multistack';
 
 export default [
   ...dictator.configs.react,

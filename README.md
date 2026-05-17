@@ -1,4 +1,4 @@
-# eslint-config-dictator
+# eslint-config-multistack
 
 Opinionated ESLint flat config presets for modern JavaScript and TypeScript projects.
 
@@ -19,13 +19,13 @@ Install it, choose a preset, and get a solid default ruleset for JavaScript, Typ
 ## Installation
 
 ```bash
-npm install --save-dev eslint @gitopslovers/eslint-config-dictator
+npm install --save-dev eslint @gitopslovers/eslint-config-multistack
 ```
 
 If you use `pnpm`:
 
 ```bash
-pnpm add -D eslint @gitopslovers/eslint-config-dictator
+pnpm add -D eslint @gitopslovers/eslint-config-multistack
 ```
 
 ## Quick start
@@ -33,7 +33,7 @@ pnpm add -D eslint @gitopslovers/eslint-config-dictator
 Create an `eslint.config.mjs` file and spread the preset you want to use.
 
 ```js
-import dictator from '@gitopslovers/eslint-config-dictator';
+import dictator from '@gitopslovers/eslint-config-multistack';
 
 export default [
   ...dictator.configs.presetName,
@@ -51,7 +51,7 @@ These are the presets currently available on the package:
 Example:
 
 ```js
-import dictator from '@gitopslovers/eslint-config-dictator';
+import dictator from '@gitopslovers/eslint-config-multistack';
 
 export default [
   ...dictator.configs.react,
@@ -75,7 +75,7 @@ Every preset already bundles rules for:
 You can append your own config after the preset to override any rule.
 
 ```js
-import dictator from '@gitopslovers/eslint-config-dictator';
+import dictator from '@gitopslovers/eslint-config-multistack';
 
 export default [
   ...dictator.configs.yourPreset,

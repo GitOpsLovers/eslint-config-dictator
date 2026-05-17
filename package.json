@@ -15,13 +15,13 @@
     "express",
     "dictator"
   ],
-  "homepage": "https://github.com/GitOpsLovers/eslint-config-dictator#readme",
+  "homepage": "https://github.com/GitOpsLovers/eslint-config-multistack#readme",
   "bugs": {
-    "url": "https://github.com/GitOpsLovers/eslint-config-dictator/issues"
+    "url": "https://github.com/GitOpsLovers/eslint-config-multistack/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GitOpsLovers/eslint-config-dictator.git"
+    "url": "git+https://github.com/GitOpsLovers/eslint-config-multistack.git"
   },
   "license": "MIT",
   "author": "GitOps Lovers",
