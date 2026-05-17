@@ -2,10 +2,10 @@ import { describe, expect, test } from 'vitest';
 
 import plugin from '../index.mjs';
 
-describe('eslint-config-dictator', () => {
+describe('eslint-config-multistack', () => {
   test('exports a meta object with name and version', () => {
     expect(plugin.meta).toBeDefined();
-    expect(plugin.meta.name).toBe('eslint-config-dictator');
+    expect(plugin.meta.name).toBe('eslint-config-multistack');
     expect(typeof plugin.meta.version).toBe('string');
   });
 
