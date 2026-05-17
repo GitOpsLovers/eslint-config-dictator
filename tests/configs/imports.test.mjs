@@ -23,6 +23,20 @@ describe('imports config', () => {
     expect(entry.settings['import/resolver'].node.project).toContain('tsconfig.json');
   });
 
+  test('registers TypeScript parser for supported TS extensions', () => {
+    expect(entry.settings['import/parsers']).toBeDefined();
+    expect(entry.settings['import/parsers']['@typescript-eslint/parser']).toEqual([
+      '.ts',
+      '.tsx',
+      '.mts',
+      '.cts',
+    ]);
+  });
+
+  test('enables TypeScript resolver type lookup', () => {
+    expect(entry.settings['import/resolver'].typescript.alwaysTryTypes).toBe(true);
+  });
+
   test('enforces unused import removal and import ordering', () => {
     expect(entry.rules['unused-imports/no-unused-imports']).toBe('error');
     expect(entry.rules['import/no-unresolved']).toBe('error');
