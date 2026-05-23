@@ -1,5 +1,5 @@
 ---
-name: “Support request”
+name: Support request
 about: Request help or ask a question about using the project
 labels: kind/support
 ---

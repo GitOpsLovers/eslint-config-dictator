@@ -1,5 +1,5 @@
 ---
-name: “Bug report”
+name: Bug report
 about: Report a bug to help us improve
 labels: kind/bug
 ---

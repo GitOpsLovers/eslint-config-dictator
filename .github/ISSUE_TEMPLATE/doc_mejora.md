@@ -1,5 +1,5 @@
 ---
-name: “Documentation improvement”
+name: Documentation improvement
 about: Suggest an improvement or correction to the documentation
 labels: kind/documentation
 ---
