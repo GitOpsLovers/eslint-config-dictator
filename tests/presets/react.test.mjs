@@ -7,6 +7,7 @@ const importsEntry = config.find((entry) => entry.plugins?.import && entry.plugi
 const reactEntry = config.find(
   (entry) => entry.plugins?.['@eslint-react'],
 );
+const ignoresEntry = config.find((entry) => Array.isArray(entry.ignores));
 
 describe('react config', () => {
   test('includes browser globals', () => {
@@ -46,5 +47,15 @@ describe('react config', () => {
     expect(importsEntry).toBeDefined();
     expect(importsEntry.rules['unused-imports/no-unused-imports']).toBe('error');
     expect(importsEntry.rules['import/order'][0]).toBe('error');
+  });
+
+  test('includes default ignores', () => {
+    expect(ignoresEntry).toBeDefined();
+    expect(ignoresEntry.ignores).toEqual([
+      'node_modules/',
+      'dist/',
+      'coverage/',
+      '.turbo/',
+    ]);
   });
 });
