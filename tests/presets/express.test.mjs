@@ -7,6 +7,7 @@ const importsEntry = config.find((entry) => entry.plugins?.import && entry.plugi
 const typescriptEntry = config.findLast(
   (entry) => entry.files?.includes('**/*.{ts,tsx,mts,cts}') && entry.rules?.['no-shadow'] === 'off',
 );
+const ignoresEntry = config.find((entry) => Array.isArray(entry.ignores));
 
 describe('express config', () => {
   test('includes node globals', () => {
@@ -59,5 +60,15 @@ describe('express config', () => {
   test('ignores next on TypeScript express handlers', () => {
     const rule = typescriptEntry.rules['@typescript-eslint/no-unused-vars'];
     expect(rule[1].argsIgnorePattern).toBe('^(next|_)');
+  });
+
+  test('includes default ignores', () => {
+    expect(ignoresEntry).toBeDefined();
+    expect(ignoresEntry.ignores).toEqual([
+      'node_modules/',
+      'dist/',
+      'coverage/',
+      '.turbo/',
+    ]);
   });
 });

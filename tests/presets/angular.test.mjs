@@ -4,6 +4,7 @@ import config from '../../lib/presets/angular.mjs';
 
 const preset = config.at(-1);
 const importsEntry = config.find((entry) => entry.plugins?.import && entry.plugins?.['unused-imports']);
+const ignoresEntry = config.find((entry) => Array.isArray(entry.ignores));
 
 describe('angular config', () => {
   test('includes browser globals', () => {
@@ -34,5 +35,16 @@ describe('angular config', () => {
     expect(importsEntry).toBeDefined();
     expect(importsEntry.rules['unused-imports/no-unused-imports']).toBe('error');
     expect(importsEntry.rules['import/order'][0]).toBe('error');
+  });
+
+  test('includes default ignores', () => {
+    expect(ignoresEntry).toBeDefined();
+    expect(ignoresEntry.ignores).toEqual([
+      'node_modules/',
+      'dist/',
+      'coverage/',
+      '.angular/',
+      '.turbo/',
+    ]);
   });
 });
