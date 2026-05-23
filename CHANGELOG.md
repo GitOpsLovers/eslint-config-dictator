@@ -1,3 +1,11 @@
+# [1.4.0](https://github.com/GitOpsLovers/eslint-config-multistack/compare/v1.3.0...v1.4.0) (2026-05-23)
+
+
+### Features
+
+* add issue templates ([#5](https://github.com/GitOpsLovers/eslint-config-multistack/issues/5)) ([0d637de](https://github.com/GitOpsLovers/eslint-config-multistack/commit/0d637de8c95d977801ecc1dac8f32ffe5e991997))
+* ignore some folders ([#6](https://github.com/GitOpsLovers/eslint-config-multistack/issues/6)) ([864ab40](https://github.com/GitOpsLovers/eslint-config-multistack/commit/864ab40613d595c5aab2c3c39910c0d5e4022873))
+
 # [1.3.0](https://github.com/GitOpsLovers/eslint-config-multistack/compare/v1.2.1...v1.3.0) (2026-05-17)
 
 
