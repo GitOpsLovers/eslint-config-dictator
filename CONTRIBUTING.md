@@ -73,10 +73,10 @@ pnpm add -D file:/absolute/path/to/eslint-config-multistack
 Then add the preset to your `eslint.config.mjs`:
 
 ```js
-import dictator from 'eslint-config-multistack';
+import multistack from '@gitopslovers/eslint-config-multistack';
 
 export default [
-  ...dictator.configs.react,
+  ...multistack.configs.react,
 ];
 ```
 
