@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/GitOpsLovers/eslint-config-multistack/compare/v1.4.0...v1.5.0) (2026-05-24)
+
+
+### Features
+
+* add Next preset ([#7](https://github.com/GitOpsLovers/eslint-config-multistack/issues/7)) ([fae8def](https://github.com/GitOpsLovers/eslint-config-multistack/commit/fae8defa81a0571a1dd94eb2c5c334f6a6a5ffb7))
+
 # [1.4.0](https://github.com/GitOpsLovers/eslint-config-multistack/compare/v1.3.0...v1.4.0) (2026-05-23)
 
 
