@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import angularConfig from './lib/presets/angular.mjs';
 import expressConfig from './lib/presets/express.mjs';
 import reactConfig from './lib/presets/react.mjs';
+import nextConfig from './lib/presets/next.mjs';
 
 const packageVersion = JSON.parse(
   readFileSync(new URL('./package.json', import.meta.url), 'utf8'),
@@ -25,6 +26,10 @@ plugin.configs = {
   react: [
     { name: 'dictator/react', plugins: { dictator: plugin } },
     ...reactConfig,
+  ],
+  next: [
+    { name: 'dictator/next', plugins: { dictator: plugin } },
+    ...nextConfig,
   ],
   express: [
     { name: 'dictator/express', plugins: { dictator: plugin } },
